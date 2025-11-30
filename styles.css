@@ -1,0 +1,241 @@
+/* ------------------------------
+   ROOT COLORS & FONTS
+------------------------------*/
+:root {
+  --green: #77d37a;
+  --green-dark: #4fb454;
+  --lemon: #ffe97a;
+  --white: #ffffff;
+  --text: #333;
+  --soft-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  --radius: 18px;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f5fff5;
+  color: var(--text);
+}
+
+/* ------------------------------
+   HEADER
+------------------------------*/
+.app-header {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--green-dark);
+}
+
+.subtitle {
+  margin-top: -6px;
+  opacity: 0.8;
+}
+
+/* ------------------------------
+   MODE CARDS
+------------------------------*/
+.mode-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.mode-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  padding: 10px;
+}
+
+.mode-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--soft-shadow);
+  transition: transform .2s, box-shadow .2s;
+  cursor: pointer;
+}
+
+.mode-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.mode-card.active {
+  border: 3px solid var(--lemon);
+  box-shadow: 0 0 20px rgba(255,240,150,0.6);
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+/* ------------------------------
+   GENERATOR
+------------------------------*/
+.generator {
+  padding: 20px;
+  text-align: center;
+}
+
+#userPrompt {
+  width: 90%;
+  height: 80px;
+  padding: 15px;
+  border-radius: var(--radius);
+  border: 2px solid var(--green);
+  font-size: 1rem;
+  outline: none;
+}
+
+.generate-btn {
+  margin-top: 10px;
+  background: var(--green);
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.generate-btn:hover {
+  background: var(--green-dark);
+}
+
+/* ------------------------------
+   LOADING ANIMATION
+------------------------------*/
+.loading {
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 6px solid #d8ffd8;
+  border-top-color: var(--green);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ------------------------------
+   OUTPUT SECTION
+------------------------------*/
+.output-section {
+  padding: 20px;
+}
+
+#output {
+  margin-top: 20px;
+  background: var(--white);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--soft-shadow);
+}
+
+/* Scratch block styling */
+.block {
+  padding: 10px 15px;
+  border-radius: 12px;
+  margin: 6px 0;
+  color: white;
+  font-weight: bold;
+}
+
+.motion { background: #4c97ff; }
+.events { background: #ffbf00; }
+.looks { background: #9966ff; }
+.control { background: #ffab19; }
+.sensing { background: #5cd1d8; }
+
+.indent {
+  margin-left: 20px;
+}
+
+/* Progress bar */
+.progress {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+#progressBar {
+  width: 0%;
+  height: 10px;
+  background: var(--green-dark);
+  border-radius: 10px;
+}
+
+/* Buttons */
+.save-btn, .read-btn {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--soft-shadow);
+}
+
+.save-btn { background: var(--lemon); }
+.read-btn { background: var(--green); color: white; }
+
+/* ------------------------------
+   SHELF
+------------------------------*/
+.shelf {
+  padding: 10px;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.shelf-item {
+  padding: 15px;
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: var(--soft-shadow);
+}
+
+/* ------------------------------
+   PWA INSTALL
+------------------------------*/
+.pwa-banner {
+  background: var(--lemon);
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: var(--soft-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.floating-install {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--green-dark);
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: var(--soft-shadow);
+  border: none;
+  font-size: 1.1rem;
+}
+
+/* Utility */
+.hidden { display: none; }
+.fade-in { animation: fade 0.6s ease-in-out; }
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

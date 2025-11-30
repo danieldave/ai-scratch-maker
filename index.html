@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Scratch Story/Game Maker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+
+<body>
+
+  <!-- INSTALL PWA BANNER -->
+  <div id="pwaBanner" class="pwa-banner hidden">
+    <span>Install this app for quick access!</span>
+    <button id="installBtn">Install</button>
+    <span id="closeBanner">✕</span>
+  </div>
+
+  <!-- FLOATING INSTALL BUTTON -->
+  <button id="floatingInstall" class="floating-install hidden">📲 Install App</button>
+
+  <!-- HEADER -->
+  <header class="app-header fade-in">
+    <h1 class="title">AI Scratch Story/Game Maker</h1>
+    <p class="subtitle">Create magical stories, games & characters — powered by AI!</p>
+  </header>
+
+  <!-- MODE SELECTION -->
+  <section class="mode-section fade-in">
+    <h2>Select a Mode</h2>
+
+    <div class="mode-grid">
+
+      <div class="mode-card" data-mode="story">
+        <div class="icon">📖</div>
+        <h3>Story Maker</h3>
+        <p>Create magical kid-friendly stories with characters & scenes.</p>
+      </div>
+
+      <div class="mode-card" data-mode="game">
+        <div class="icon">🎮</div>
+        <h3>Game Maker</h3>
+        <p>Build fun games with rules, challenges & Scratch logic.</p>
+      </div>
+
+      <div class="mode-card" data-mode="characters">
+        <div class="icon">🧑‍🚀</div>
+        <h3>Character Builder</h3>
+        <p>Design amazing heroes with traits & abilities.</p>
+      </div>
+
+      <div class="mode-card" data-mode="scenes">
+        <div class="icon">🌄</div>
+        <h3>Scene Builder</h3>
+        <p>Create worlds, locations & adventure settings.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROMPT INPUT -->
+  <section class="generator fade-in">
+    <textarea id="userPrompt" placeholder="Tell the AI what you want to create..."></textarea>
+    <button id="generateBtn" class="generate-btn">✨ Generate</button>
+    <div id="loading" class="loading hidden"></div>
+  </section>
+
+  <!-- OUTPUT -->
+  <section id="outputSection" class="output-section hidden fade-in">
+    <h2>Your Creation</h2>
+    <div id="progressBarContainer" class="progress hidden">
+      <div id="progressBar"></div>
+      <p id="progressLabel"></p>
+    </div>
+
+    <div id="output"></div>
+
+    <button id="saveBtn" class="save-btn">💾 Save to My Shelf</button>
+    <button id="readBtn" class="read-btn">🔈 Read Aloud</button>
+  </section>
+
+  <!-- MY SHELF -->
+  <section class="shelf-section fade-in">
+    <h2>My Shelf</h2>
+    <div id="shelfContainer" class="shelf"></div>
+  </section>
+
+  <!-- CONFETTI CANVAS -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="app.js"></script>
+</body>
+</html>
